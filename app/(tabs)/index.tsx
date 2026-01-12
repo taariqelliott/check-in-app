@@ -4,7 +4,7 @@ import { styles } from "../../styles/auth.styles";
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Home Feed</Text>
+      <Text style={styles.tagline}>Home Feed</Text>
     </View>
   );
 }

@@ -1,0 +1,50 @@
+import { COLORS } from "@/constants/theme";
+import { styles } from "@/styles/auth.styles";
+import { useSSO } from "@clerk/clerk-expo";
+import { Ionicons } from "@expo/vector-icons";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+
+export default function Login() {
+  const { startSSOFlow } = useSSO();
+
+  const handleGoogleSignIn = () => {
+    console.log("Logged in with Google.");
+  };
+  return (
+    <View style={styles.container}>
+      {/* Brand Section*/}
+      <View style={styles.brandSection}>
+        <View style={styles.logoContainer}>
+          <Ionicons name="leaf" size={32} color={COLORS.primary} />
+        </View>
+        <Text style={styles.appName}>Check-In</Text>
+        <Text style={styles.tagline}>See What Your Friends Need</Text>
+      </View>
+      {/* Illustration */}
+      <View style={styles.illustrationContainer}>
+        <Image
+          style={styles.illustration}
+          source={require("../../assets/images/friends1.png")}
+          resizeMode="cover"
+        />
+      </View>
+
+      {/* Login Section */}
+      <View style={styles.loginSection}>
+        <TouchableOpacity
+          style={styles.googleButton}
+          activeOpacity={0.4}
+          onPress={handleGoogleSignIn}
+        >
+          <View style={styles.googleIconContainer}>
+            <Ionicons name="logo-google" size={20} color={COLORS.surface} />
+          </View>
+          <Text style={styles.googleButtonText}>Continue with Google</Text>
+        </TouchableOpacity>
+        <Text style={styles.termsText}>
+          By continuing, you agree to our Terms and Privacy policy
+        </Text>
+      </View>
+    </View>
+  );
+}
