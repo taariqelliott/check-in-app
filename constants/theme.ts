@@ -4,7 +4,7 @@ export const COLORS = {
   background: "#171123",
   surface: "#372248",
   surfaceLight: "#414770",
-  white: "#f8f8fc",
-  gray: "#a8a8ac",
-  black: "#18181c",
+  white: "#f8f8fd",
+  gray: "#a8a8ad",
+  black: "#18181d",
 } as const;
