@@ -1,7 +1,7 @@
+import InitialLayout from "@/componenets/InitialLayout";
 import { COLORS } from "@/constants/theme";
 import { ClerkProvider } from "@clerk/clerk-expo";
 import { tokenCache } from "@clerk/clerk-expo/token-cache";
-import { Stack } from "expo-router";
 import { StatusBar } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
@@ -11,9 +11,9 @@ export default function RootLayout() {
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
       <SafeAreaProvider>
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.background }}>
           <StatusBar barStyle="default" />
-          <Stack screenOptions={{ headerShown: false }} />
+          <InitialLayout />
         </SafeAreaView>
       </SafeAreaProvider>
     </ClerkProvider>
