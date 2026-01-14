@@ -19,6 +19,7 @@ export default function Index() {
             paddingHorizontal: 4,
             paddingVertical: 4,
             textAlign: "center",
+            marginHorizontal: 3,
           }}
         >
           Signout
