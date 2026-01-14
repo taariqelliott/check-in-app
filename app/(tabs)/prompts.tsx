@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 
-export default function Create() {
+export default function Prompts() {
   return (
     <View>
-      <Text>Create</Text>
+      <Text>Prompts</Text>
     </View>
   );
 }
