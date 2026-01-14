@@ -8,7 +8,7 @@ export default function RootLayout() {
   return (
     <ClerkAndConvexProviders>
       <SafeAreaProvider>
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.background }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black }}>
           <StatusBar barStyle="default" />
           <InitialLayout />
         </SafeAreaView>

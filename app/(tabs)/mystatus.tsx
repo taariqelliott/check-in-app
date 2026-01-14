@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 
-export default function Create() {
+export default function MyStatus() {
   return (
     <View>
-      <Text>Create</Text>
+      <Text>MyStatus</Text>
     </View>
   );
 }

@@ -6,7 +6,7 @@ const { width, height } = Dimensions.get("window");
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: COLORS.white,
   },
   brandSection: {
     alignItems: "center",
@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
   },
   tagline: {
     fontSize: 16,
-    color: COLORS.gray,
+    color: COLORS.black,
     letterSpacing: 1,
     // textTransform: "lowercase",
   },
