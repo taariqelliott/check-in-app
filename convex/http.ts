@@ -54,12 +54,12 @@ http.route({
         evt.data;
 
       const email = email_addresses[0].email_address;
-      const name = `${first_name || ""} ${last_name || ""}`.trim();
+      const fullname = `${first_name || ""} ${last_name || ""}`.trim();
 
       try {
         await ctx.runMutation(api.users.createUser, {
           email,
-          fullname: name,
+          fullname,
           image_url,
           clerkId: id,
           username: email.split("@")[0],
