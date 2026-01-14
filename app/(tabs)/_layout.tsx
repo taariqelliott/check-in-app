@@ -1,3 +1,4 @@
+import { HapticTab } from "@/components/haptic-tab";
 import { COLORS } from "@/constants/theme";
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
@@ -19,6 +20,7 @@ export default function TabLayout() {
           paddingTop: 5,
           bottom: 0,
         },
+        tabBarButton: HapticTab,
       }}
     >
       <Tabs.Screen
