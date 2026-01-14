@@ -7,13 +7,16 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 
 export default function Login() {
   const { startSSOFlow } = useSSO();
+
   const router = useRouter();
 
-  const handleGoogleSignIn = async () => {
+  const handleSignIn = async (authStrategy: "google" | "apple") => {
     try {
-      const { createdSessionId, setActive } = await startSSOFlow({
-        strategy: "oauth_google",
-      });
+      const strategy =
+        authStrategy === "google" ? "oauth_google" : "oauth_apple";
+
+      const { createdSessionId, setActive } = await startSSOFlow({ strategy });
+
       if (setActive && createdSessionId) {
         setActive({ session: createdSessionId });
         router.replace("/(tabs)");
@@ -22,9 +25,9 @@ export default function Login() {
       console.error("OAuth error:", error);
     }
   };
+
   return (
     <View style={styles.container}>
-      {/* Brand Section*/}
       <View style={styles.brandSection}>
         <View style={styles.logoContainer}>
           <Ionicons name="leaf" size={32} color={COLORS.primary} />
@@ -32,7 +35,7 @@ export default function Login() {
         <Text style={styles.appName}>Check-In</Text>
         <Text style={styles.tagline}>See What Your Friends Need</Text>
       </View>
-      {/* Illustration */}
+
       <View style={styles.illustrationContainer}>
         <Image
           style={styles.illustration}
@@ -41,18 +44,29 @@ export default function Login() {
         />
       </View>
 
-      {/* Login Section */}
       <View style={styles.loginSection}>
         <TouchableOpacity
-          style={styles.googleButton}
+          style={styles.authButton}
           activeOpacity={0.4}
-          onPress={handleGoogleSignIn}
+          onPress={() => handleSignIn("google")}
         >
-          <View style={styles.googleIconContainer}>
+          <View style={styles.authIconContainer}>
             <Ionicons name="logo-google" size={20} color={COLORS.surface} />
           </View>
-          <Text style={styles.googleButtonText}>Continue with Google</Text>
+          <Text style={styles.authButtonText}>Continue with Google</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.authButton}
+          activeOpacity={0.4}
+          onPress={() => handleSignIn("apple")}
+        >
+          <View style={styles.authIconContainer}>
+            <Ionicons name="logo-apple" size={20} color={COLORS.surface} />
+          </View>
+          <Text style={styles.authButtonText}>Continue with Apple</Text>
+        </TouchableOpacity>
+
         <Text style={styles.termsText}>
           By continuing, you agree to our Terms and Privacy policy
         </Text>

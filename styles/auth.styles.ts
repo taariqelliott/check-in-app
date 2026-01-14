@@ -51,8 +51,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingBottom: 40,
     alignItems: "center",
+    gap: 2,
   },
-  googleButton: {
+  authButton: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
@@ -72,14 +73,14 @@ export const styles = StyleSheet.create({
     shadowRadius: 12,
     elevation: 5,
   },
-  googleIconContainer: {
+  authIconContainer: {
     width: 24,
     height: 24,
     justifyContent: "center",
     alignItems: "center",
     marginRight: 12,
   },
-  googleButtonText: {
+  authButtonText: {
     fontSize: 16,
     fontWeight: "600",
     color: COLORS.surface,

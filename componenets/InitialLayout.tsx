@@ -4,7 +4,6 @@ import { useEffect } from "react";
 
 export default function InitialLayout() {
   const { isLoaded, isSignedIn } = useAuth();
-
   const segments = useSegments();
   const router = useRouter();
 
