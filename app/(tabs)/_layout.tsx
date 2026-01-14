@@ -14,8 +14,9 @@ export default function TabLayout() {
           borderTopWidth: 0,
           position: "absolute",
           elevation: 0,
-          height: 50,
+          height: 55,
           paddingBottom: 10,
+          paddingTop: 5,
           bottom: 0,
         },
       }}
