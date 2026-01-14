@@ -30,10 +30,10 @@ export default function Login() {
     <View style={styles.container}>
       <View style={styles.brandSection}>
         <View style={styles.logoContainer}>
-          <Ionicons name="leaf" size={32} color={COLORS.primary} />
+          <Ionicons name="people-circle" size={32} color={COLORS.primary} />
         </View>
-        <Text style={styles.appName}>Check-In</Text>
-        <Text style={styles.tagline}>See What Your Friends Need</Text>
+        <Text style={styles.appName}>Kinfolk</Text>
+        <Text style={styles.tagline}>It takes a village. This is yours.</Text>
       </View>
 
       <View style={styles.illustrationContainer}>

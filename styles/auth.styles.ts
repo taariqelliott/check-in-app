@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: COLORS.gray,
     letterSpacing: 1,
-    textTransform: "lowercase",
+    // textTransform: "lowercase",
   },
   illustrationContainer: {
     flex: 1,
